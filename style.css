@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+:root {
+  --animDelay: 0.2s;
+  --animSpeed: 1.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  display: inline-block;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: blue;
+  margin-bottom: 4rem;
+  transform: translateY(-1000%);
+  opacity: 0;
+}
+
+.letter-m {
+  margin-right: 1.2rem;
+}
+
+.first-text,
+.second-text {
+  font-style: italic;
+  line-height: 1.8;
+  opacity: 0;
+}
+
+.name {
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.from {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  color: rgb(133, 0, 0);
+  opacity: 0;
+}
+
+button {
+  margin-top: 4rem;
+  padding: 0.8rem;
+  border: 1px solid purple;
+  background: purple;
+  color: #fff;
+  border-radius: 0.5rem;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.container.open .text {
+  animation: bounce var(--animSpeed) ease-in forwards;
+}
+
+.container.open .letter-i {
+  animation-delay: var(--animDelay);
+}
+
+.container.open .apos {
+  animation-delay: calc(var(--animDelay) * 2);
+}
+
+.container.open .letter-m {
+  animation-delay: calc(var(--animDelay) * 3);
+}
+
+.container.open .letter-s {
+  animation-delay: calc(var(--animDelay) * 4);
+}
+
+.container.open .letter-o {
+  animation-delay: calc(var(--animDelay) * 5);
+}
+
+.container.open .letter-1r {
+  animation-delay: calc(var(--animDelay) * 6);
+}
+
+.container.open .letter-2r {
+  animation-delay: calc(var(--animDelay) * 7);
+}
+
+.container.open .letter-y {
+  animation-delay: calc(var(--animDelay) * 8);
+}
+
+.container.open .first-text,
+.container.open .second-text {
+  animation: show var(--animSpeed) ease-in forwards;
+  animation-delay: calc(var(--animDelay) * 12);
+}
+
+.container.open .from {
+  animation: show var(--animSpeed) ease-in forwards;
+  animation-delay: calc(var(--animDelay) * 25);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-1000%);
+    opacity: 0;
+    color: blue;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  90% {
+    transform: translateY(20%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    color: purple;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes button {
+  0%,
+  100% {
+    visibility: visible;
+  }
+
+  .5%,
+  95% {
+    visibility: hidden;
+  }
+}
